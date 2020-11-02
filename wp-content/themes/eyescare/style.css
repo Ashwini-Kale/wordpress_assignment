@@ -1,0 +1,20 @@
+/*
+Theme Name: Eyes Care
+Author: Ashwini
+Version: 1.0
+Description: This theme is for Eyes Care 
+Text Domain: eyescare
+ */
+/*  css for store archive page */
+.archive h3{
+  text-align: center;
+}
+
+/* single store page */
+.single-stores h3{
+  font-size: 25px;
+  line-height: 3;
+}
+.single-stores h3 span{
+  font-weight: 100;
+}
