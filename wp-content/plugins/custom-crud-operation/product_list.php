@@ -68,8 +68,7 @@ function myFunction() {
       <h1 class="wp-heading-inline">Product</h1>
       <a href="<?php echo admin_url('admin.php?page=Product_Insert'); ?>" class="add_product" >Add Product</a>
       <input type="text" id="product_search" onkeyup="myFunction()" placeholder="Search for Product Names" title="Type in a name">
-     
-        <table id="product_table" class="wp-list-table widefat fixed striped posts">
+      <table id="product_table" class="wp-list-table widefat fixed striped posts">
             <thead>
             <tr>
                 <th>No</th>
@@ -87,10 +86,9 @@ function myFunction() {
             <?php
             global $wpdb;
             $i = 1;
-            $table_name = $wpdb->prefix . 'products';
+            $table_name = $wpdb->prefix . 'custom_products';
             $products = $wpdb->get_results("SELECT id,product_name,product_type,price,product_description,created_date,updated_date from $table_name");
-            foreach ($products as $product) {
-                
+            foreach ($products as $product) {                
                 ?>
                 <tr>
                     <td><?php echo $i; ?></td>
@@ -104,13 +102,10 @@ function myFunction() {
                     <td><a href="<?php echo admin_url('admin.php?page=Product_Delete&id=' . $product->id); ?>"> Delete</a></td>
                 </tr>
             <?php $i++; }  ?>
-
             </tbody>
         </table>
     </div>
     <?php
     }
     add_shortcode('short_product_list', 'product_list');
-
-
 ?>

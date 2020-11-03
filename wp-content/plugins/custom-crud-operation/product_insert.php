@@ -1,5 +1,4 @@
 <?php
-
 function product_insert()
 {
     ?>
@@ -24,7 +23,6 @@ font-weight: initial;padding: 5px 20px;width: 100%;}
     color: #016087;
     padding: 10px;width: 100%;cursor: pointer;}
     </style>
-
 <div>
     <h1>Add New Product</h1>
 </div>
@@ -70,7 +68,6 @@ font-weight: initial;padding: 5px 20px;width: 100%;}
     </tbody>
 </table>
 <?php
-
 // insert data
     if(isset($_POST['ins'])){
         global $wpdb;
@@ -80,7 +77,7 @@ font-weight: initial;padding: 5px 20px;width: 100%;}
         $product_description=$_POST['product_description'];
         $created_date=$_POST['created_date'];
         $updated_date=$_POST['updated_date'];
-        $table_name = $wpdb->prefix . 'products';
+        $table_name = $wpdb->prefix . 'custom_products';
         $wpdb->insert(
             $table_name,
             array(

@@ -3,7 +3,6 @@
 function product_update(){
  ?>
  <style>
-
  .product_upadte td{font-size: 16px;
     font-weight: 500;
         padding-bottom: 20px;
@@ -15,23 +14,20 @@ function product_update(){
     font-size: 16px;
     background-color: white;
 font-weight: initial;padding: 5px 20px;width: 100%;}
-
 .product_upadte input[type="submit" i]{transition: none;
     background: #f1f1f1;
     border: 1px solid #016087;
     color: #016087;
     padding: 10px;width: 100%;cursor: pointer;}
-
  </style>
     <?php
     //echo "update page in";
     $i=$_GET['id'];
     global $wpdb;
-    $table_name = $wpdb->prefix . 'products';
+    $table_name = $wpdb->prefix . 'custom_products';
     $product = $wpdb->get_results("SELECT id,product_name,product_type,price,product_description,created_date,updated_date from $table_name where id=$i");
      $product[0]->id;
     ?>
-
      <h1 class="wp-heading-inline">Update Product</h1>
     <table class="product_upadte">
    
@@ -75,7 +71,7 @@ font-weight: initial;padding: 5px 20px;width: 100%;}
 if(isset($_POST['upd']))
 {
     global $wpdb;
-    $table_name=$wpdb->prefix.'products';
+    $table_name=$wpdb->prefix.'custom_products';
     $id=$_POST['id'];
      $product_name=$_POST['product_name'];
         $product_type=$_POST['product_type'];
@@ -103,5 +99,4 @@ if(isset($_POST['upd']))
         <?php
         exit;
 }
-
 ?>
